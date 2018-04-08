@@ -160,6 +160,27 @@ UpdatePositions(id:any,name:string,descr:string){
   }
   return this.http.PutData('positions/'+id+"/",JSON.stringify(params));
 }
+GetVacancy(){
+  return this.http.GetData('vacancies/','');
+}
+CreateVacancy(name:string,descr:string){
+  let params = {
+    name : name,
+    description: descr
+  };
+
+  return this.http.PostData('vacancies/',JSON.stringify(params));
+}
+deleteVacancy(id:number){
+  return this.http.DeleteData('vacancies/'+id);
+}
+UpdateVacancy(id:any,name:string,descr:string){
+  let params = {
+    name : name,
+    description: descr
+  }
+  return this.http.PutData('vacancies/'+id+"/",JSON.stringify(params));
+}
 
 
 
