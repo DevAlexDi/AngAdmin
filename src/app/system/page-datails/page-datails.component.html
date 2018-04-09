@@ -1,0 +1,104 @@
+<div class="container-fluid">
+  <div class="animated fadeIn">
+    <div class="row">
+      <div class="col-lg-12">
+          
+        <div class="card">
+          <div class="card-header">
+            
+            
+          </div>
+          
+          <form>
+
+
+          </form>
+          <div class="card-body">
+            <table class="table table-responsive-sm table-bordered table-striped table-sm">
+             
+              <tbody *ngIf="loadFlag">
+                <tr>
+                    <td>название</td>
+                    <td>{{users.name}}</td>
+                </tr>
+                <tr>
+                  <td>компания</td>
+                  <td><a [routerLink]="[ '/system/company', users.company.id]">{{users.company.name}}</a></td>
+                </tr>
+                <tr>
+                  <td>тип судна</td>
+                  <td>{{users.type.name}}</td>
+                </tr>
+                <tr>
+                  <td>me тип</td>
+                  <td>{{users.me_type.name}}</td>
+                </tr>
+                <tr>
+                  <td>dp система</td>
+                  <td>{{users.dp_system.name}}</td>
+                </tr>
+                <tr>
+                  <td>экипаж</td>
+                  <td><a href="#">{{users.crew[0].position.name}}</a></td>
+                </tr>
+                
+                <tr>
+                  <td>дата постройки</td>
+                  <td>{{users.built_at}}</td>
+                </tr>
+                <tr>
+                  <td>флаг</td>
+                  <td>{{users.flag}}</td>
+                </tr>
+                <tr>
+                  <td>dwt</td>
+                  <td>{{users.dwt}}</td>
+                </tr>
+                <tr>
+                  <td>grt</td>
+                  <td>{{users.grt}}</td>
+                </tr>
+                <tr>
+                  <td>kw</td>
+                  <td>{{users.kw}}</td>
+                </tr>
+                <tr>
+                  <td>телефон</td>
+                  <td>{{users.phone}}</td>
+                </tr>
+                <tr>
+                  <td>почта</td>
+                  <td>{{users.email}}</td>
+                </tr>
+                <tr>
+                  <td>другие контакты</td>
+                  <td>{{users.other_contacts}}</td>
+                </tr>
+                
+              </tbody>
+            </table>
+            <!--
+            <nav>
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+            -->
+          </div>
+        </div>
+      </div>
+      <!--/.col-->
+    </div>
+    <!--/.row-->
+  </div>
+
+</div>
+
+

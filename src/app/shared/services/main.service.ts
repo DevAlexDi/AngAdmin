@@ -183,10 +183,34 @@ UpdateVacancy(id:any,name:string,descr:string){
 }
 
 
+GetVesselInfo(id:number){
+  return this.http.GetData('vessels/'+id,'');
+}
+GetCompanieInfo(id:number){
+  return this.http.GetData('companies/'+id,'');
+}
 
 
+GetCompanyes(){
+  return this.http.GetData('companies/','');
+}
+deleteCompanyes(id:number){
+  return this.http.DeleteData('companies/'+id);
+}
 
+GetShips(){
+  return this.http.GetData('vessels/','');
+}
+deleteShips(id:number){
+  return this.http.DeleteData('vessels/'+id);
+}
 
+GetSeamens(){
+  return this.http.GetData('sailors/','');
+}
+deleteSeamens(id:number){
+  return this.http.DeleteData('sailors/'+id);
+}
 
 
 

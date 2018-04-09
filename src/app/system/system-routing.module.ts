@@ -12,6 +12,8 @@ import { ShipsComponent } from './ships/ships.component';
 import { SeamenComponent } from './seamen/seamen.component';
 import { VacancyComponent } from './vacancy/vacancy.component';
 import { SystemComponent } from './system.component';
+import { PageDatailsComponent } from './page-datails/page-datails.component';
+import { CompanyDatailsComponent } from './company-datails/company-datails.component';
 
 
 
@@ -26,7 +28,9 @@ const routes: Routes = [
           { path: 'companys', component: CompanysComponent},
           { path: 'ships', component: ShipsComponent},
           { path: 'seamen', component: SeamenComponent},
-          { path: 'vacancy', component: VacancyComponent}
+          { path: 'vacancy', component: VacancyComponent},
+          { path: 'ship/:id', component: PageDatailsComponent},
+          { path: 'company/:id', component: CompanyDatailsComponent}
         ]
     }
 ];

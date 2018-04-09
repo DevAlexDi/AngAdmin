@@ -13,6 +13,8 @@ import { SeamenComponent } from './seamen/seamen.component';
 import { VacancyComponent } from './vacancy/vacancy.component';
 import { SystemComponent } from './system.component';
 import { FormsModule } from '@angular/forms';
+import { PageDatailsComponent } from './page-datails/page-datails.component';
+import { CompanyDatailsComponent } from './company-datails/company-datails.component';
 
 @NgModule({
   imports: [
@@ -20,7 +22,7 @@ import { FormsModule } from '@angular/forms';
     SystemRoutingModule,
     FormsModule 
   ],
-  declarations: [SystemComponent,UsersComponent, DpComponent, MeComponent, OfficeComponent, CompanysComponent, ShipsTypeComponent, ShipsComponent, SeamenComponent, VacancyComponent]
+  declarations: [SystemComponent,UsersComponent, DpComponent, MeComponent, OfficeComponent, CompanysComponent, ShipsTypeComponent, ShipsComponent, SeamenComponent, VacancyComponent, PageDatailsComponent, CompanyDatailsComponent]
   
 })
 export class SystemModule { }
