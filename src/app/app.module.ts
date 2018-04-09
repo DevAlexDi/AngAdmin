@@ -7,17 +7,24 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app.routing';
 
-//import { AppAccessGuard } from './app.guard';
+
+import { MainService } from './shared/services/main.service';
+import { HttpService } from './shared/services/http.service';
 
 
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { SystemModule } from './system/system.module';
+import { AuthComponent } from './auth/auth.component';
+import { SystemComponent } from './system/system.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,7 @@ import { SystemModule } from './system/system.module';
     AppRoutingModule,
     SystemModule
   ],
-  providers: [HttpModule/*, AppAccessGuard*/],
+  providers: [HttpModule,HttpService,MainService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

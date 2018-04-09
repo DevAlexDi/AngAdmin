@@ -5,10 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
 
 
+
+
 const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch:'full'},
-    { path: 'login',component: AuthComponent/*, canActivate: [AppAccessGuard]*/}/*,
-    { path: 'system', loadChildren: './systemModule/system.module#SystemModule'}*/
+    { path: 'login',component: AuthComponent},
+    { path: 'system',loadChildren: './system/system.module#SystemModule'}
+
 ];
 
 @NgModule({

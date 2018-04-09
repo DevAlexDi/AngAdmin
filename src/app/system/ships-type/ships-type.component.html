@@ -1,3 +1,128 @@
-<p>
-  ships-type works!
-</p>
+<div class="container-fluid">
+    <div class="animated fadeIn">
+     
+      <div class="row">
+        <div class="col-lg-6">
+            <div class="card ">
+                <div class="card-header ">
+                  Создание <strong>Судов</strong>
+                </div>
+                <div class="card-body ">
+                  <form #myForm="ngForm" (submit)="myForm.reset()" (ngSubmit)="CreateUserForm()" class="form-horizontal ">
+                    <div class="form-group row ">
+                      <label class="col-sm-5 col-form-label " for="input-small ">Имя</label>
+                      <div class="col-sm-6 ">
+                        <input type="text "  [(ngModel)]="LoginParams.email" name="loginemail" (ngModelChange)="LoginParams.email = $event" class="form-control form-control-sm ">
+                      </div>
+                    </div>
+                    <div class="form-group row ">
+                        <label class="col-sm-5 col-form-label " for="input-small ">Описание</label>
+                        <div class="col-sm-6 ">
+                          <input type="text " [(ngModel)]="LoginParams.login" name="loginlogin" (ngModelChange)="LoginParams.login = $event"  class="form-control form-control-sm " >
+                        </div>
+                      </div>
+                      
+                        <p *ngIf="ErrorShow">введите все поля</p>
+                        <div class="">
+                            <button type="submit" class="btn btn-sm btn-primary "><i class="fa fa-dot-circle-o "></i>Создать</button>
+                            
+                          </div>
+                  </form>
+                </div>
+                
+              </div>
+  
+        </div>
+  
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+            
+          <div class="card">
+            <div class="card-header">
+              
+              Таблица Типов Судов
+            </div>
+            
+            <form>
+  
+  
+            </form>
+            <div class="card-body">
+              <table class="table table-responsive-sm table-bordered table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th></th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of users;let i = index">
+                    <td>{{users[i].name}}</td>
+                    <td>{{users[i].description}}</td>
+                    <td>
+                      <button class="btn btn-sm btn-danger" (click)="delete(item.id)" style="margin:10px">Удалить</button>
+                      <button class="btn btn-sm btn-danger"  data-target="#exampleModal" (click)="UpdateOpenModal(item)" style="margin:10px">Изменить</button>
+                    </td>
+                    
+                  </tr>
+                  
+                </tbody>
+              </table>
+              <!--
+              <nav>
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+              -->
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+      </div>
+      <!--/.row-->
+    </div>
+  
+  </div>
+
+
+
+  <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <form #myFormtwo="ngForm" (ngSubmit)="Update()" class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Изменить</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="form-group">
+                  <label for="company">Название</label>
+                  <input type="text" [ngModel]="newvalue.name" [ngModelOptions]="{standalone: true}" (ngModelChange)="newvalue.name = $event" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="company">Описание</label>
+                  <textarea [ngModel]="newvalue.descr" [ngModelOptions]="{standalone: true}" (ngModelChange)="newvalue.descr = $event" class="form-control" rows="4"></textarea>
+              </div>
+
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" >Закрыть</button>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+          </div>
+        </form>
+      </div>
+    </div>
